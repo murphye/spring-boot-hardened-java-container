@@ -144,3 +144,13 @@ Jib can build and push the image to your repo without the Docker daemon.
 
 > **Note:** The full `docker.io` image repository reference is used so `jib:build` will correctly authenticate with the Docker Hub registry.
 
+## Optional: Dockerfile Build
+
+This is a multi-stage Dockerfile to build the Spring Boot application from scratch.
+
+```shell
+docker build -t docker.io/murphye/spring-boot-chainguard-demo-df .
+```
+```shell
+docker run docker.io/murphye/spring-boot-chainguard-demo-df
+```
