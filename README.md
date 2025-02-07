@@ -27,10 +27,35 @@ brew install grype
 ./mvnw clean install
 ```
 
-## Run Jib Docker Build for Local Container Image
+## Building the Container Image with Jib
 
 [Jib](https://github.com/GoogleContainerTools/jib) can use Docker to build a local container image for the application.
 This demo project uses the [Jib Maven Plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin).
+This plugin can be configured to use Chainguard `chainguard/jre:latest` as shown:
+
+```xml
+<from>
+    <image>chainguard/jre:latest</image> <!-- No vulnerabilities -->
+    <platforms>
+        <platform>
+            <os>linux</os>
+            <architecture>arm64</architecture>
+        </platform>
+    </platforms>
+</from>
+```
+
+> **Note:** The supplied [`Dockerfile`](./Dockerfile) could also be used instead of Jib, but Jib offers efficient image layering. See the bonus
+> material on `dive` at the end of this README for how to explore these layers. Also, Jib has the ability to
+> build images without the Docker daemon which his great for CI/CD pipelines.
+
+> **Note:** Spring Boot offers [Buildpack integration](https://docs.spring.io/spring-boot/reference/packaging/container-images/cloud-native-buildpacks.html)
+> out of the box, but there is no Buildpack available that uses the Chainguard base image.
+
+
+### Run Jib Docker Build for Local Container Image
+
+Jib can be used to use Docker to build a local image:
 
 ```shell
 ./mvnw jib:dockerBuild
@@ -40,14 +65,6 @@ Run the application using the local container image using Docker:
 ```shell
 docker run docker.io/murphye/spring-boot-chainguard-demo
 ```
-
-> **Note:** A `Dockerfile` could also be used instead of Jib, but Jib offers efficient image layering. See the bonus 
-> material on `dive` at the end of this README for how to explore these layers. Also, Jib has the ability to
-> build images without the Docker daemon which his great for CI/CD pipelines.
-
-> **Note:** Spring Boot offers [Buildpack integration](https://docs.spring.io/spring-boot/reference/packaging/container-images/cloud-native-buildpacks.html)
-> out of the box, but there is no Buildpack available that uses the Chainguard base image.
-
 
 ## Run `grype` Against the Local Container Image
 
@@ -114,7 +131,7 @@ dive into the various image layers.
 alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
 dive docker.io/murphye/spring-boot-chainguard-demo
 ```
-When using `dive` you will see 5 image layers, and you can examine which layers are storing the dependencies, 
+When using `dive` you will see 5 layers for the image built with Jib, and you can examine which layers are storing the dependencies, 
 configurations, and the Spring Boot application itself. The bottom layer will be the JRE base image.
 
 ## Optional: Jib Build and Push Image to Repo
