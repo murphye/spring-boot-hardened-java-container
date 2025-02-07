@@ -99,7 +99,6 @@ This may be useful for the following reasons:
 ### Run `grype` When Using Spring Boot version 3.4.0 (Has Vulnerabilities)
 
 ```shell
-./mvnw compile
 grype target/classes/META-INF/sbom/application.cdx.json
  ✔ Scanned for vulnerabilities     [4 vulnerability matches]  
    ├── by severity: 0 critical, 2 high, 1 medium, 1 low, 0 negligible
@@ -114,8 +113,7 @@ tomcat-embed-core  10.1.33    10.1.34   java-archive  GHSA-27hp-xhwr-wr2m  High
 ### Run `grype` When Using Spring Boot version 3.4.2 (No Vulnerabilities)
 
 ```shell
-./mvnw compile
-grype target/classes/META-INF/sbom/application.cdx.json
+gype target/classes/META-INF/sbom/application.cdx.json
  ✔ Scanned for vulnerabilities     [0 vulnerability matches]  
    ├── by severity: 0 critical, 0 high, 0 medium, 0 low, 0 negligible
    └── by status:   0 fixed, 0 not-fixed, 0 ignored 
