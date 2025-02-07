@@ -43,7 +43,7 @@ docker run docker.io/murphye/spring-boot-chainguard-demo
 
 > **Note:** A `Dockerfile` could also be used instead of Jib, but Jib offers efficient image layering. See the bonus 
 > material on `dive` at the end of this README for how to explore these layers. Also, Jib has the ability to
-> build images without the Docker daemon whic his great for CI/CD pipelines.
+> build images without the Docker daemon which his great for CI/CD pipelines.
 
 > **Note:** Spring Boot offers [Buildpack integration](https://docs.spring.io/spring-boot/reference/packaging/container-images/cloud-native-buildpacks.html)
 > out of the box, but there is no Buildpack available that uses the Chainguard base image.
