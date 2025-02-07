@@ -1,9 +1,12 @@
 # Spring Boot Chainguard Java Container Demo
 
 This demo project will show how to build an optimized, secure, vulnerability-free [Spring Boot](https://spring.io/projects/spring-boot) 
-container image using the Chainguard [JRE base image](https://console.chainguard.dev/org/welcome/images/public/image/jre/versions#/).
+container image using the Chainguard [Java JRE base image](https://console.chainguard.dev/org/welcome/images/public/image/jre/versions#/). 
 
-As a bonus, a [CycloneDX SBOM](https://github.com/CycloneDX) will be generated for the application and included into the image, which can then be scanned by [grype](https://github.com/anchore/grype). 
+Chainguard's Java JRE base image is the only one available with 0 vulnerabilities (as of Feb 7, 2025).
+
+As a bonus, a [CycloneDX SBOM](https://github.com/CycloneDX) will be generated for the application, which can then be scanned by [grype](https://github.com/anchore/grype).
+This demo will show how `grype` can be used to scan both images and SBOMs.
 
 ## Prerequisites
 
@@ -38,7 +41,15 @@ Run the application using the local container image using Docker:
 docker run docker.io/murphye/spring-boot-chainguard-demo
 ```
 
-## Run `grype` against Local Container Image
+> **Note:** A `Dockerfile` could also be used instead of Jib, but Jib offers efficient image layering. See the bonus 
+> material on `dive` at the end of this README for how to explore these layers. Also, Jib has the ability to
+> build images without the Docker daemon whic his great for CI/CD pipelines.
+
+> **Note:** Spring Boot offers [Buildpack integration](https://docs.spring.io/spring-boot/reference/packaging/container-images/cloud-native-buildpacks.html)
+> out of the box, but there is no Buildpack available that uses the Chainguard base image.
+
+
+## Run `grype` Against the Local Container Image
 
 ```shell
 grype docker.io/murphye/spring-boot-chainguard-demo:latest
@@ -56,7 +67,6 @@ No vulnerabilities found
 ```
 
 As you can see, there are no vulnerabilities found when using the latest version of Spring Boot and the Chainguard [JRE base image](https://console.chainguard.dev/org/welcome/images/public/image/jre/versions#/).
-Currently, the Chainguard image is the only available JRE image with 0 vulnerabilities.
 
 ## Bonus: Run `gype` against CycloneDX SBOM
 
