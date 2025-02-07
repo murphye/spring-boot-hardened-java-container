@@ -5,7 +5,7 @@ container image using the Chainguard [Java JRE base image](https://console.chain
 
 Chainguard's Java JRE base image is the only one available with 0 vulnerabilities (as of Feb 7, 2025).
 
-<img src="img/survey.png" width="1000">
+
 
 As a bonus, a [CycloneDX SBOM](https://github.com/CycloneDX) will be generated for the application, which can then be scanned by [grype](https://github.com/anchore/grype).
 This demo will show how `grype` can be used to scan both images and SBOMs.
