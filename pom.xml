@@ -57,7 +57,7 @@
 					</from>
 					<to>
 						<image>
-							registry.hub.docker.com/murphye/spring-boot-chainguard-demo:latest
+							docker.io/murphye/spring-boot-chainguard-demo:latest
 						</image>
 					</to>
 					<container>

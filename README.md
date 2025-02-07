@@ -26,22 +26,23 @@ brew install grype
 
 ## Run Jib Docker Build for Local Container Image
 
-Jib can use Docker to build a local container image for the application.
+[Jib](https://github.com/GoogleContainerTools/jib) can use Docker to build a local container image for the application.
+This demo project uses the [Jib Maven Plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin).
 
 ```shell
 ./mvnw jib:dockerBuild
 ```
 
-To run the application: 
+Run the application using the local container image using Docker: 
 ```shell
-docker run registry.hub.docker.com/murphye/spring-boot-chainguard-demo
+docker run docker.io/murphye/spring-boot-chainguard-demo
 ```
 
 ## Run `grype` against Local Container Image
 
 ```shell
-grype registry.hub.docker.com/murphye/spring-boot-chainguard-demo:latest
- ✔ Loaded image                                                                                                                                 registry.hub.docker.com/murphye/spring-boot-chainguard-demo:latest
+grype docker.io/murphye/spring-boot-chainguard-demo:latest
+ ✔ Loaded image                                                                                                                                 docker.io/murphye/spring-boot-chainguard-demo:latest
  ✔ Parsed image                                                                                                                            sha256:18f64293e66f391c41e7363c989687b852203e0fb9c32744f0c5d7b80a0e7f79
  ✔ Cataloged contents                                                                                                                             0b944452baefa268f36e01336d79d0fb1fc35f13bef0c11c262d3ef2c9e46d06
    ├── ✔ Packages                        [74 packages]  
@@ -101,7 +102,7 @@ dive into the various image layers.
 
 ```shell
 alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
-dive registry.hub.docker.com/murphye/spring-boot-chainguard-demo
+dive docker.io/murphye/spring-boot-chainguard-demo
 ```
 When using `dive` you will see 5 image layers, and you can examine which layers are storing the dependencies, 
 configurations, and the Spring Boot application itself. The bottom layer will be the JRE base image.
@@ -113,3 +114,6 @@ Jib can build and push the image to your repo without the Docker daemon.
 ```shell
 jib:build
 ```
+
+> **Note:** The full `docker.io` image repository reference is used so `jib:build` will correctly authenticate with the Docker Hub registry.
+
