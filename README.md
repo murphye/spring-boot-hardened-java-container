@@ -139,7 +139,7 @@ configurations, and the Spring Boot application itself. The bottom layer will be
 Jib can build and push the image to your repo without the Docker daemon.
 
 ```shell
-jib:build
+./mvnw jib:build
 ```
 
 > **Note:** The full `docker.io` image repository reference is used so `jib:build` will correctly authenticate with the Docker Hub registry.
