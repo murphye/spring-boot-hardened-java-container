@@ -1,6 +1,6 @@
 # Spring Boot Chainguard Java Container Demo
 
-This demo project will show how to build an optimized, secure [Spring Boot](https://spring.io/projects/spring-boot) 
+This demo project will show how to build an optimized, secure, vulnerability-free [Spring Boot](https://spring.io/projects/spring-boot) 
 container image using the Chainguard [JRE base image](https://console.chainguard.dev/org/welcome/images/public/image/jre/versions#/).
 
 As a bonus, a [CycloneDX SBOM](https://github.com/CycloneDX) will be generated for the application and included into the image, which can then be scanned by [grype](https://github.com/anchore/grype). 
