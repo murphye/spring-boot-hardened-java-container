@@ -22,19 +22,19 @@ The original Eclipse Temurin and Amazon Corretto images have vulnerabilities, bu
 |-----------------------------------------------|------------------------------------------------------------------------------|------------|--------------|
 | chainguard/jre:latest                         | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 427MB      | 104MB        |
 | amazoncorretto:25                             | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 848MB      | 245MB        |
-| amazoncorretto:25-alpine                      | <ul><li>0 Critical</li><li>0 High</li><li>3 Medium</li><li>0 Low</li></ul>   | 557MB      | 183MB        |
 | dhi.io/amazoncorretto:25                      | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 680MB      | 217MB        |
+| amazoncorretto:25-alpine                      | <ul><li>0 Critical</li><li>0 High</li><li>3 Medium</li><li>0 Low</li></ul>   | 557MB      | 183MB        |
 | dhi.io/amazoncorretto:25-alpine3.22           | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 619MB      | 207MB        |
 | eclipse-temurin:25                            | <ul><li>0 Critical</li><li>1 High</li><li>76 Medium</li><li>95 Low</li></ul> | 579MB      | 142MB        |
-| eclipse-temurin:25-jre-alpine                 | <ul><li>0 Critical</li><li>3 High</li><li>9 Medium</li><li>1 Low</li></ul>   | 303MB      | 75MB         |
 | dhi.io/eclipse-temurin:25                     | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 314MB      | 60.1MB       |
+| eclipse-temurin:25-jre-alpine                 | <ul><li>0 Critical</li><li>3 High</li><li>9 Medium</li><li>1 Low</li></ul>   | 303MB      | 75MB         |
 | dhi.io/eclipse-temurin:25-alpine3.23          | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 246MB      | 48.4MB       |
+| bellsoft/liberica-openjre-alpine:25           | <ul><li>0 Critical</li><li>0 High</li><li>3 Medium</li><li>6 Low</li></ul>   | 208MB      | 52.7MB       |
 | mcr.microsoft.com/openjdk/jdk:25-distroless   | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 602MB      | 127MB        |
 | bitnami/java                                  | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 823MB      | 281MB        |
 | gcr.io/distroless/java25-debian13             | <ul><li>0 Critical</li><li>1 High</li><li>2 Medium</li><li>0 Low</li></ul>   | 321MB      | 82MB         |
 | ibm-semeru-runtimes:open-25-jre               | <ul><li>0 Critical</li><li>1 High</li><li>16 Medium</li><li>22 Low</li></ul> | 456MB      | 108MB        |
 | container-registry.oracle.com/java/openjdk:25 | <ul><li>0 Critical</li><li>2 High</li><li>25 Medium</li><li>1 Low</li></ul>  | 1.04GB     | 328MB        |
-| bellsoft/liberica-openjre-alpine:25           | <ul><li>0 Critical</li><li>0 High</li><li>3 Medium</li><li>6 Low</li></ul>   | 208MB      | 52.7MB       |
 
 
 
