@@ -4,7 +4,7 @@ This demo project will show how to build an optimized, secure, vulnerability-fre
 container image using either:
 
 * Chainguard [OpenJDK image](https://console.chainguard.dev/org/welcome/images/public/image/jre/versions#/)
-* Docker Hardened Images (DHI) OpenJDK ([Amazon Corretto](https://hub.docker.com/hardened-images/catalog/dhi/amazoncorretto/) or [Eclipse Temurin](https://hub.docker.com/hardened-images/catalog/dhi/eclipse-temurin)) images
+* Docker Hardened Images (DHI) OpenJDK ([Amazon Corretto](https://hub.docker.com/hardened-images/catalog/dhi/amazoncorretto/) and [Eclipse Temurin](https://hub.docker.com/hardened-images/catalog/dhi/eclipse-temurin)) images
 
 ## Differences Between Chainguard and Docker Hardened Images (DHI)
 
