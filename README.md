@@ -6,7 +6,7 @@ container image using either:
 * Chainguard [OpenJDK image](https://console.chainguard.dev/org/welcome/images/public/image/jre/versions#/)
 * Docker Hardened Images (DHI) OpenJDK ([Amazon Corretto](https://hub.docker.com/hardened-images/catalog/dhi/amazoncorretto/) and [Eclipse Temurin](https://hub.docker.com/hardened-images/catalog/dhi/eclipse-temurin)) images
 
-## Differences Between Chainguard and Docker Hardened Images (DHI)
+## Comparison of Chainguard and Docker Hardened Images (DHI)
 
 | Provider   | OpenJDK Distros                     | Free JRE LTS Versions | Licensed JRE LTS Versions | Base Images    | Long Term Support |
 |------------|-------------------------------------|-----------------------|---------------------------|----------------|-------------------|
