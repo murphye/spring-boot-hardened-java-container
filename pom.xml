@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.2</version>
+		<version>3.5.9</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -14,7 +14,7 @@
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>25</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,12 +42,12 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
-				<version>3.4.4</version>
+				<version>3.5.1</version>
 				<configuration>
 					<from>
-<!--						<image>openjdk:23-slim</image> &lt;!&ndash; Currently has Critical vulnerabilities &ndash;&gt;-->
-<!--						<image>eclipse-temurin:23-jre-alpine</image> &lt;!&ndash; Currently has Medium vulnerabilities &ndash;&gt;-->
-						<image>chainguard/jre:latest</image> <!-- No vulnerabilities -->
+<!--						DHI images are not currently compatible with Jib due to zstd-compressed layers. See https://github.com/GoogleContainerTools/jib/issues/3822 -->
+<!--						<image>dhi.io/eclipse-temurin:25-alpine3.23</image> - This will not work until Jib is updated for zstd -->
+						<image>chainguard/jre:latest</image>
 						<platforms>
 							<platform>
 								<os>linux</os>
@@ -57,7 +57,7 @@
 					</from>
 					<to>
 						<image>
-							docker.io/murphye/spring-boot-chainguard-demo:latest
+							docker.io/murphye/spring-boot-hardened-demo:latest
 						</image>
 					</to>
 					<container>
