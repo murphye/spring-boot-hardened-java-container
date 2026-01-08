@@ -67,7 +67,7 @@ docker login dhi.io
 
 There are two multi-stage Dockerfiles to build the Spring Boot application from scratch using Maven, one for DHI and one for Chainguard.
 
-### DHI Images
+### Build with DHI Images
 
 ```shell
 docker build -f dhi.Dockerfile -t docker.io/murphye/spring-boot-dhi-demo .
@@ -79,7 +79,7 @@ docker run --mount type=tmpfs,destination=/tmp docker.io/murphye/spring-boot-dhi
 > Note: Using the Alpine-based image requires manually mounting `/tmp` as shown in the previous command
 
 
-### Chainguard Images
+### Build with Chainguard Images
 
 ```shell
 docker build -f chainguard.Dockerfile -t docker.io/murphye/spring-boot-chainguard-demo .
