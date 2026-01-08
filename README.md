@@ -49,6 +49,12 @@ brew tap anchore/grype
 brew install grype
 ```
 
+Additionally, you must login to `dhi.io` to pull the Docker Hardened Images.
+
+```shell
+docker login dhi.io
+```
+
 ## Build the Spring Boot Demo Application
 
 ```shell
