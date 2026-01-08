@@ -16,6 +16,8 @@ container image using either:
 
 ## Vulnerability Survey of JRE Images (as of January 7, 2026)
 
+The original Eclipse Temurin and Amazon Corretto images have vulnerabilities, but the DHI variants have 0 vulnerabilities for both Eclipse Temurin and Amazon Corretto. 
+
 | JRE Image                                     | Vulnerabilities                                                              | Disk Usage | Content Size |
 |-----------------------------------------------|------------------------------------------------------------------------------|------------|--------------|
 | chainguard/jre:latest                         | <ul><li>0 Critical</li><li>0 High</li><li>0 Medium</li><li>0 Low</li></ul>   | 427MB      | 104MB        |
